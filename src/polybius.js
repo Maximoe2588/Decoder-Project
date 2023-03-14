@@ -1,11 +1,8 @@
-// Please refrain from tampering with the setup code provided here,
-// as the index.html and test files rely on this setup to work properly.
-// Only add code (helper methods, variables, etc.) within the scope
-// of the anonymous function on line 6
+
 
 const polybiusModule = (function () {
   function polybius(input, encode = true) {
-    //set objects for translating letters
+    
     let alphabet = {
       a: "11", b: "21", c: "31", d: "41", e: "51", f: "12", g: "22", h: "32",
       i: "42", j: "42", k: "52", l: "13", m: "23", n: "33", o: "43", 
@@ -19,7 +16,7 @@ const polybiusModule = (function () {
     42: "(i/j)", 43: "o", 44: "t", 45: "y", 51: "e", 52: "k", 53: "p",
     54: "u", 55: "z", [' ']: " "
   }
-  //if and else statment for encode and decode
+  
   if (encode) {
     return input.split('').map(letter => {
       return alphabet[letter.toLowerCase()]
@@ -33,9 +30,9 @@ const polybiusModule = (function () {
   }
 }
 
-
   return {
     polybius,
   };
 })();
+
 module.exports = { polybius: polybiusModule.polybius };
